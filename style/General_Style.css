@@ -1,240 +1,288 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
- html {
-    background: radial-gradient(ellipse at center, #2c2c54, #1a1a2e) no-repeat fixed;
+html {
+  background: radial-gradient(ellipse at center, #2c2c54, #1a1a2e) no-repeat
+    fixed;
 }
 
 body {
-    font-family: 'Playfair Display', serif;
-    margin: 0;
-    padding: 0;
-    color: #d9d9d9;
-    padding-top: 130px;
-    padding-bottom: 65px;
-    min-height: 100vh;
-    box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+  color: #d9d9d9;
+  padding-top: 130px;
+  padding-bottom: 65px;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .contact {
-    margin: 20px;
-    font-size: 1.2em;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+  margin: 20px;
+  font-size: 1.2em;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 .contact-button {
-    background-color: transparent;
-    color: white;
-    border: 2px solid #8e8db3;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Playfair Display', serif;
-    font-size: 1em;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #8e8db3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-size: 1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contact-button:hover {
-    background-color: #8e8db3;
-    color: #0d2e20;
+  background-color: #8e8db3;
+  color: #0d2e20;
 }
 
 .contact-form {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: rgba(13, 46, 32, 0.5);
-    border-radius: 8px;
-    border: 1px solid #8e8db3;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(13, 46, 32, 0.5);
+  border-radius: 8px;
+  border: 1px solid #8e8db3;
 }
 
 .contact-form h3 {
-    text-align: center;
-    margin-top: 0;
+  text-align: center;
+  margin-top: 0;
 }
 
 .form-group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #d9d9d9;
-    color: #1a1a2e;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #d9d9d9;
+  color: #1a1a2e;
+  box-sizing: border-box;
 }
 
 .form-submit-container {
-    text-align: center;
+  text-align: center;
 }
 
 #confirmation-message {
-    text-align: center;
-    margin-top: 20px;
-    color: #2a9d8f;
-    font-size: 1.1em;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  margin-top: 20px;
+  color: #2a9d8f;
+  font-size: 1.1em;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .accueil-button-container {
-    position: fixed;
-    bottom: 80px;
-    left: 20px;
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
 }
 
 .accueil-button-container button {
-    background-color: transparent;
-    color: white;
-    border: 2px solid #8e8db3;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Playfair Display', serif;
-    font-size: 1em;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #8e8db3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-size: 1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .accueil-button-container button:hover {
-    background-color: #8e8db3;
-    color: #0d2e20;
+  background-color: #8e8db3;
+  color: #0d2e20;
 }
 
 .projects-list {
-    list-style: none;
-    padding: 0 20px;
-    text-align: center;
-    margin: 2em 0;
+  list-style: none;
+  padding: 0 20px;
+  text-align: center;
+  margin: 2em 0;
 }
+
 .projects-list li {
-    background-color: #f4f4f4;
-    margin: 10px auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    max-width: 600px;
-    color: #1a1a2e;
+  background-color: rgba(13, 46, 32, 0.5);
+  border: 1px solid #8e8db3;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  color: #d9d9d9;
+  transition: padding-bottom 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.projects-list li:hover {
+  padding-bottom: 20px;
+}
+
+.projects-list li:hover .project-details {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+.projects-list li h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.project-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    margin-top 0.5s ease-in-out;
+}
+
+.project-button {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #8e8db3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-button:hover {
+  background-color: #8e8db3;
+  color: #0d2e20;
 }
 
 .nav_button {
-    margin-left: 570px;
-    gap: 13px;
+  margin-left: 570px;
+  gap: 13px;
 }
 
 .nav_button button {
-    background-color: transparent;
-    color: white;
-    border: 2px solid #8e8db3;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Playfair Display', serif;
-    font-size: 1em;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #8e8db3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-size: 1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav_button button:hover {
-    background-color: #8e8db3;
-    color: #0d2e20;
+  background-color: #8e8db3;
+  color: #0d2e20;
 }
 
 header {
-    background-color: #0d2e20;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 3px solid #207a6f;
+  background-color: #0d2e20;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 3px solid #207a6f;
 }
 
 header #profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid #2a9d8f;
-    object-fit: cover;
-    margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #2a9d8f;
+  object-fit: cover;
+  margin-right: 20px;
 }
 header h1 {
-    margin: 0;
+  margin: 0;
 }
 header h2 {
-    margin: 0;
-    font-weight: normal;
-    font-size: 2em;
-    margin-left: 350px;
+  margin: 0;
+  font-weight: normal;
+  font-size: 2em;
+  margin-left: 350px;
 }
 
 footer {
-    background-color: #0d2e20;
-    color: white;
-    text-align: center;
-    padding: 0px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    border-top: 3px solid #207a6f;
+  background-color: #0d2e20;
+  color: white;
+  text-align: center;
+  padding: 0px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-top: 3px solid #207a6f;
 }
 
 /* --- Media Queries pour la responsivité --- */
 
 @media (max-width: 1024px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 15px;
-    }
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 15px;
+  }
 
-    header h2 {
-        margin-left: 0;
-        font-size: 1.5em;
-    }
+  header h2 {
+    margin-left: 0;
+    font-size: 1.5em;
+  }
 
-    .nav_button {
-        margin-left: 0;
-        margin-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .nav_button {
+    margin-left: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    body {
-        padding-top: 220px;
-    }
+  body {
+    padding-top: 220px;
+  }
 }
 
 @media (max-width: 768px) {
-    .nav_button {
-        flex-direction: column;
-        align-items: center;
-    }
+  .nav_button {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .nav_button button {
-        width: 80%;
-        margin-bottom: 10px;
-    }
+  .nav_button button {
+    width: 80%;
+    margin-bottom: 10px;
+  }
 
-    .accueil-button-container {
-        position: static;
-        text-align: center;
-        margin: 20px 0;
-    }
+  .accueil-button-container {
+    position: static;
+    text-align: center;
+    margin: 20px 0;
+  }
 }
