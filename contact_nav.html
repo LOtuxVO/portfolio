@@ -15,39 +15,42 @@
         <h2>Me Contacter</h2>
     </header>
 
-    <div class="contact">
-        <span>Mon LinkedIn :</span> <button class="contact-button" onclick="window.open('https://www.linkedin.com/in/edgar-pullès-b3869737a', '_blank', 'noopener,noreferrer')"><i class="fab fa-linkedin"></i> LinkedIn</button>
-        <span>Mon GitHub :</span> <button class="contact-button" onclick="window.open('https://github.com/lotuxvo', '_blank', 'noopener,noreferrer')"><i class="fab fa-github"></i> GitHub</button>
-    </div>
-
-    <form id="contact-form" class="contact-form">
-        <h3>M'envoyer un e-mail</h3>
-        <div class="form-group">
-            <label for="name">Nom et Prénom :</label>
-            <input type="text" id="name" name="name" required>
+    <main>
+        <div class="contact">
+            <div class="contact-item"><span>Mon LinkedIn :</span> <button class="contact-button" onclick="window.open('https://www.linkedin.com/in/edgar-pullès-b3869737a', '_blank', 'noopener,noreferrer')"><i class="fab fa-linkedin"></i> LinkedIn</button></div>
+            <div class="contact-item"><span>Mon GitHub :</span> <button class="contact-button" onclick="window.open('https://github.com/lotuxvo', '_blank', 'noopener,noreferrer')"><i class="fab fa-github"></i> GitHub</button></div>
         </div>
-        <div class="form-group">
-            <label for="email">Votre E-mail :</label>
-            <input type="email" id="email" name="email" required>
+    
+        <form id="contact-form" class="contact-form">
+            <h3>M'envoyer un e-mail</h3>
+            <div class="form-group">
+                <label for="name">Nom et Prénom :</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Votre E-mail :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Objet :</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-submit-container">
+                <button type="submit" class="contact-button">Envoyer le mail</button>
+            </div>
+        </form>
+    
+        <div id="confirmation-message"></div>
+    
+        <div class="accueil-button-container">
+            <button onclick="window.location.href='index.html'">Accueil</button>
         </div>
-        <div class="form-group">
-            <label for="subject">Objet :</label>
-            <input type="text" id="subject" name="subject" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <div class="form-submit-container">
-            <button type="submit" class="contact-button">Envoyer le mail</button>
-        </div>
-    </form>
-
-    <div id="confirmation-message"></div>
-
-    <div class="accueil-button-container">
-        <button onclick="window.location.href='index.html'">Accueil</button>
-    </div>
+    </main>
+    
     <footer>
         <p>Développement : Edgar Pullès. ©2025</p>
     </footer>
