@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/General_Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="./img/EdgarPulles.jpg">
     <title>Edgar Pullès | Etudiant à Junia Bordeaux</title>
 </head>
@@ -14,11 +15,73 @@
         <h2>Me Contacter</h2>
     </header>
 
-    
+    <div class="contact">
+        Mon LinkedIn : <button class="contact-button" onclick="window.location.href='https://www.linkedin.com/in/edgar-pullès-b3869737a'"><i class="fab fa-linkedin"></i> LinkedIn</button></br></br>
+        Mon GitHub : <button class="contact-button" onclick="window.location.href='https://github.com/lotuxvo'"><i class="fab fa-github"></i> GitHub</button>
+    </div>
 
-    <div class="nav_button"><button onclick="window.location.href='index.html'">Accueil</button></div>
+    <form id="contact-form" class="contact-form">
+        <h3>M'envoyer un e-mail</h3>
+        <div class="form-group">
+            <label for="name">Nom et Prénom :</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Votre E-mail :</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Objet :</label>
+            <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="form-submit-container">
+            <button type="submit" class="contact-button">Envoyer le mail</button>
+        </div>
+    </form>
+
+    <div id="confirmation-message"></div>
+
+    <div class="accueil-button-container">
+        <button onclick="window.location.href='index.html'">Accueil</button>
+    </div>
     <footer>
         <p>Développement : Edgar Pullès. ©2025</p>
     </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const myEmail = 'edgar.pulles@gmail.com';
+
+            const name = document.getElementById('name').value;
+            const userEmail = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const body = `Ce message a été envoyé depuis votre portfolio par :
+Nom: ${name}
+Email: ${userEmail}
+
+Message:
+${message}`;
+
+            window.location.href = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            const confirmationDiv = document.getElementById('confirmation-message');
+            confirmationDiv.innerText = "Votre client de messagerie s'est ouvert. Finalisez l'envoi !";
+            confirmationDiv.style.opacity = '1';
+
+            document.getElementById('contact-form').reset();
+
+            setTimeout(() => {
+                confirmationDiv.style.opacity = '0';
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
