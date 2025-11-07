@@ -245,13 +245,14 @@ footer {
   z-index: 1000;
 }
 
-/* --- Media Queries pour la responsivité --- */
+/* --- Media Queries pour le responsive --- */
 
 @media (max-width: 1024px) {
   header {
     flex-direction: column;
     position: static;
     text-align: center;
+    padding: 10px 0 15px 0;
     padding-bottom: 15px;
   }
 
