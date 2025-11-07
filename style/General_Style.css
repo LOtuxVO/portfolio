@@ -3,6 +3,7 @@
 html {
   background: radial-gradient(ellipse at center, #2c2c54, #1a1a2e) no-repeat
     fixed;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,6 +15,29 @@ body {
   padding-bottom: 65px;
   min-height: 100vh;
   box-sizing: border-box;
+}
+
+main section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(142, 141, 179, 0.5);
+  scroll-margin-top: 130px;
+}
+
+main section:last-of-type {
+  border-bottom: none;
+}
+
+main section h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+main section p, main section li {
+  line-height: 1.6;
 }
 
 .contact {
@@ -183,7 +207,8 @@ body {
   gap: 13px;
 }
 
-.nav_button button {
+.nav_button button,
+.nav_button a {
   background-color: transparent;
   color: white;
   border: 2px solid #8e8db3;
@@ -192,10 +217,13 @@ body {
   cursor: pointer;
   font-family: "Playfair Display", serif;
   font-size: 1em;
+  text-decoration: none;
+  display: inline-block;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.nav_button button:hover {
+.nav_button button:hover,
+.nav_button a:hover {
   background-color: #8e8db3;
   color: #0d2e20;
 }
@@ -214,14 +242,63 @@ header {
   border-bottom: 3px solid #207a6f;
 }
 
-header #profile-pic {
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+#menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+header nav {
+  display: flex;
+}
+
+#profile-pic-container {
   width: 100px;
   height: 100px;
+  perspective: 1000px;
+  margin-right: 20px;
+}
+
+.profile-pic-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+#profile-pic-container:hover .profile-pic-flipper {
+  transform: rotateY(180deg);
+}
+
+#profile-pic-front,
+#profile-pic-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   border-radius: 50%;
   border: 3px solid #2a9d8f;
   object-fit: cover;
-  margin-right: 20px;
 }
+
+#profile-pic-back {
+  transform: rotateY(180deg);
+}
+
 header h1 {
   margin: 0;
 }
@@ -242,18 +319,23 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  margin: 0px;
+  height: 45px;
   z-index: 1000;
 }
-
-/* --- Media Queries pour le responsive --- */
 
 @media (max-width: 1024px) {
   header {
     flex-direction: column;
+    align-items: center;
     position: static;
-    text-align: center;
     padding: 10px 0 15px 0;
     padding-bottom: 15px;
+    text-align: center;
+  }
+
+  header nav {
+    width: 100%;
   }
 
   header h2 {
@@ -262,11 +344,53 @@ footer {
   }
 
   .nav_button {
+    position: relative;
     margin-left: 0;
     margin-top: 10px;
+  }
+  
+  #menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  #menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  #menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .nav_button {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 11rem;
+    background-color: #0d2e20;
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    padding: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #8e8db3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  }
+
+  .nav_button.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   body {
@@ -280,14 +404,19 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .nav_button {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+}
 
-  .nav_button button {
-    width: 80%;
+@media (max-width: 768px) {
+  .nav_button button,
+  .nav_button a {
+    width: 100%;
+    box-sizing: border-box;
     margin-bottom: 10px;
   }
 

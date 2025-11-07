@@ -4,30 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/General_Style.css">
-    <link rel="icon" href="./img/EdgarPulles.jpg">
+    <link rel="icon" href="./img/EdgarPullesPhoto.jpg">
     <title>Edgar Pullès | Etudiant à Junia Bordeaux</title>
 </head>
 <body>
     <header>
-        <img src="./img/EdgarPulles.jpg" alt="Photo de profil" id="profile-pic">
+        <div id="profile-pic-container">
+            <div class="profile-pic-flipper">
+                <img src="./img/EdgarPullesPhoto.jpg" alt="Photo de profil - face avant" id="profile-pic-front">
+                <img src="./img/EdgarPulles.jpg" alt="Photo de profil - face arrière" id="profile-pic-back">
+            </div>
+        </div>
         <h1>Edgar Pullès</h1>
         <nav>
-            <div class="nav_button">
-            <button>Presentation</button>
-            <button>Competences</button>
-            <button>Parcours</button>
-            <button onclick="window.location.href='projets_nav.html'">Projets</button>
-            <button onclick="window.location.href='contact_nav.html'">Contact</button>
+            <button id="menu-toggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav_button" id="nav-links">
+                <a href="#presentation">Presentation</a>
+                <a href="#competences">Competences</a>
+                <a href="#parcours">Parcours</a>
+                <a href="projets_nav.html">Projets</a>
+                <a href="contact_nav.html">Contact</a>
             </div>
         </nav>
     </header>
 
     <main>
-        
+        <section id="presentation">
+            <h2>Présentation</h2>
+            <p>Bonjour et bienvenue sur mon portfolio ! Je suis Edgar Pullès, un étudiant passionné par le développement web et les nouvelles technologies. Actuellement en formation à JUNIA, je suis constamment à la recherche de nouveaux défis pour développer mes compétences et ma créativité.</p>
+            <p>Ce site est une vitrine de mon parcours, de mes compétences techniques et des projets sur lesquels j'ai eu le plaisir de travailler. N'hésitez pas à explorer !</p>
+        </section>
+
+        <section id="competences">
+            <h2>Compétences</h2>
+            <p>Ici, vous pouvez lister vos compétences techniques. Par exemple :</p>
+            <ul>
+                <li><strong>Langages :</strong> HTML5, CSS3, JavaScript, Python</li>
+                <li><strong>Frameworks & Bibliothèques :</strong> React, Node.js, Express</li>
+                <li><strong>Outils :</strong> Git, GitHub, VS Code, Figma</li>
+            </ul>
+        </section>
+
+        <section id="parcours">
+            <h2>Parcours</h2>
+            <p>Décrivez ici votre parcours académique et professionnel. Mentionnez vos diplômes, les écoles que vous avez fréquentées, et les expériences professionnelles (stages, alternance, projets tutorés) qui ont marqué votre apprentissage.</p>
+        </section>
     </main>
 
     <footer>
         <p>Développement : Edgar Pullès. ©2025</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', function(event) {
+            event.stopPropagation(); 
+
+            navLinks.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = navLinks.contains(event.target);
+            if (navLinks.classList.contains('active') && !isClickInsideMenu) {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
