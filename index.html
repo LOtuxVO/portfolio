@@ -59,10 +59,14 @@
             <h2>Mon CV</h2>
             <p>Pour un aperçu complet de mon profil, de mes expériences et de mes compétences, n'hésitez pas à aller voir et télécharger mon CV qui est disponible au format PDF.</p>
             <div class="download-button-container">
-                <a href="./doc/2021 11 29 - Edgar Pullès - CV LaBRI.pdf" target="_blank" download class="download-button">Voir mon CV</a>
+                <a href="./doc/2021 11 29 - Edgar Pullès - CV LaBRI.pdf" target="_blank" download rel="noopener noreferrer" class="download-button">Voir mon CV</a>
             </div>
         </section>
     </main>
+
+    <a href="#" id="scrollToTopBtn" title="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </a>
 
     <footer>
         <p>Développement : Edgar Pullès. ©2025</p>
@@ -86,6 +90,26 @@
                 menuToggle.classList.remove('active');
             }
         });
+
+
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
     </script>
 </body>
 </html>

@@ -18,7 +18,6 @@
         </div>
         <h1>Edgar Pullès</h1>
         <h2>Me Contacter</h2>
-        <nav></nav>
     </header>
 
     <main>
@@ -57,6 +56,10 @@
         </div>
     </main>
     
+    <a href="#" id="scrollToTopBtn" title="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </a>
+
     <footer>
         <p>Développement : Edgar Pullès. ©2025</p>
     </footer>
@@ -91,6 +94,25 @@ ${message}`;
                 confirmationDiv.style.opacity = '0';
             }, 5000);
         });
+
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
     </script>
 </body>
 </html>

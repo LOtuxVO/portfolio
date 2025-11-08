@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   color: #d9d9d9;
-  padding-top: 130px;
+  padding-top: 130px; 
   padding-bottom: 65px;
   min-height: 100vh;
   box-sizing: border-box;
@@ -41,23 +41,23 @@ main section p, main section li {
 }
 
 .lang-flag {
-  height: 1.4em; /* La hauteur du drapeau s'adapte à la taille du texte */
-  width: auto; /* La largeur s'ajuste automatiquement */
-  vertical-align: middle; /* Aligne le drapeau au milieu du texte */
-  margin-left: 5px; /* Ajoute un petit espace avant le drapeau */
-  border: 1px solid rgba(217, 217, 217, 0.6); /* Bordure subtile */
-  border-radius: 3px; /* Coins légèrement arrondis */
+  height: 1.4em; 
+  width: auto; 
+  vertical-align: middle; 
+  margin-left: 5px; 
+  border: 1px solid rgba(217, 217, 217, 0.6); 
+  border-radius: 3px; 
 }
 
 .tech-icon {
-  height: 1.5em; /* Un peu plus grand pour la lisibilité */
+  height: 1.3em; 
   width: auto;
   vertical-align: middle;
   margin: 0 3px;
   position: relative;
-  top: -1px; /* Ajustement fin de la position verticale */
-  border: 1px solid rgba(217, 217, 217, 0.6); /* Bordure subtile */
-  border-radius: 3px; /* Coins légèrement arrondis */
+  top: -1px; 
+  border: 1px solid rgba(217, 217, 217, 0.6); 
+  border-radius: 3px; 
 }
 
 .contact {
@@ -169,14 +169,21 @@ main section p, main section li {
 .projects-list li {
   background-color: rgba(13, 46, 32, 0.5);
   border: 1px solid #8e8db3;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   color: #d9d9d9;
-  transition: padding-bottom 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, padding-bottom 0.5s ease-in-out;
   overflow: hidden;
+}
+
+.projects-list li.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projects-list li:hover {
@@ -185,7 +192,7 @@ main section p, main section li {
 
 .projects-list li:hover .project-details,
 .projects-list li.active .project-details {
-  max-height: 500px; /* Hauteur suffisante pour le contenu */
+  max-height: 500px; 
   opacity: 1;
   margin-top: 20px;
 }
@@ -221,6 +228,14 @@ main section p, main section li {
 .project-button:hover {
   background-color: #8e8db3;
   color: #0d2e20;
+}
+
+.project-button.disabled {
+  background-color: #555;
+  border-color: #777;
+  color: #aaa;
+  cursor: not-allowed;
+  pointer-events: none; 
 }
 
 .download-button-container {
@@ -364,9 +379,43 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  margin: 0px;
   height: 45px;
   z-index: 1000;
+}
+
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  z-index: 100;
+  border: 2px solid #8e8db3;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.3s ease, color 0.3s ease;
+}
+
+#scrollToTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#scrollToTopBtn:active {
+  transform: scale(0.9); 
 }
 
 @media (max-width: 1024px) {
@@ -440,12 +489,18 @@ footer {
 
   body {
     padding-top: 20px;
-    padding-bottom: 20px;
   }
 
-  footer {
-    position: static;
-    padding: 10px 0;
+  #scrollToTopBtn {
+    bottom: 70px; 
+    right: 20px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    #scrollToTopBtn:hover {
+      background-color: #8e8db3;
+      color: #0d2e20;
+    }
   }
 }
 
