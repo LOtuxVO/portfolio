@@ -163,8 +163,9 @@ main section p, main section li {
   padding-bottom: 20px;
 }
 
-.projects-list li:hover .project-details {
-  max-height: 200px;
+.projects-list li:hover .project-details,
+.projects-list li.active .project-details {
+  max-height: 500px; /* Hauteur suffisante pour le contenu */
   opacity: 1;
   margin-top: 20px;
 }
