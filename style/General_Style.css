@@ -40,6 +40,26 @@ main section p, main section li {
   line-height: 1.6;
 }
 
+.lang-flag {
+  height: 1.4em; /* La hauteur du drapeau s'adapte à la taille du texte */
+  width: auto; /* La largeur s'ajuste automatiquement */
+  vertical-align: middle; /* Aligne le drapeau au milieu du texte */
+  margin-left: 5px; /* Ajoute un petit espace avant le drapeau */
+  border: 1px solid rgba(217, 217, 217, 0.6); /* Bordure subtile */
+  border-radius: 3px; /* Coins légèrement arrondis */
+}
+
+.tech-icon {
+  height: 1.5em; /* Un peu plus grand pour la lisibilité */
+  width: auto;
+  vertical-align: middle;
+  margin: 0 3px;
+  position: relative;
+  top: -1px; /* Ajustement fin de la position verticale */
+  border: 1px solid rgba(217, 217, 217, 0.6); /* Bordure subtile */
+  border-radius: 3px; /* Coins légèrement arrondis */
+}
+
 .contact {
   margin: 20px;
   font-size: 1.2em;
@@ -203,8 +223,32 @@ main section p, main section li {
   color: #0d2e20;
 }
 
+.download-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.download-button {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #8e8db3;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #8e8db3;
+  color: #0d2e20;
+}
+
 .nav_button {
-  margin-left: 570px;
+  margin-left: 500px;
   gap: 13px;
 }
 
