@@ -22,14 +22,22 @@
     <main>
         <ul class="projects-list">
             <li>
-                <h3>LTSOS</h3>
+                <div class="project-header">
+                    <h3>LTSOS</h3>
+                    <img src="./img/projets/LTSOS.png" alt="Capture d'écran de LTSOS" class="project-screenshot">
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
                 <div class="project-details">
                     <p>LTSOS, de son nom complet LoTuS-OS, est un système d'exploitation très basique codé en C dans lequel on retrouve un affichage texte, l'heure en France, la date en France, et une animation en ASCII-Art.</p>
                     <a href="https://github.com/LOtuxVO/LTSOS" target="_blank" rel="noopener noreferrer" class="project-button">Repo Github</a>
                 </div>
             </li>
             <li>
-                <h3>Cocktails Odyssey</h3>
+                <div class="project-header">
+                    <h3>Cocktails Odyssey</h3>
+                    <img src="./img/projets/Cocktails_Odyssey.png" alt="Capture d'écran de Cocktails Odyssey" class="project-screenshot">
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
                 <div class="project-details">
                     <p>Cocktails Odyssey est un site web codé en HTML5, CSS3 et JS. Ce site vise à recenser des cocktails sous forme de fiches avec les ingrédients, la recette et des conseils ; mais aussi un système d'aléatoire pour se faire surprendre par le résultat ; et d'autres choses à découvrir.</p>
                     <a href="https://github.com/LOtuxVO/Cocktails_Odyssey" target="_blank" rel="noopener noreferrer" class="project-button">Repo Github</a>
@@ -37,7 +45,10 @@
                 </div>
             </li>
             <li>
-                <h3>Lego F1 RaceCar</h3>
+                <div class="project-header">
+                    <h3>Lego F1 RaceCar</h3>
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
                 <div class="project-details">
                     <p>Ce projet a été réalisé en Lego avec le Lego Mindstorm EV3 sorti le 1er Décembre 2013. Le projet vise à recréer une Formule 1 (F1) tout en Lego, fonctionnelle et contrôlable à l'aide de la manette présente dans le set ainsi que du logiciel EV3 Classroom qui permet de coder avec des blocks un programme compris par le Lego.</p>
                     <a href="#" target="_blank" rel="noopener noreferrer" class="project-button disabled" aria-disabled="true" title="Vidéo bientôt disponible">Voir la Vidéo (montage en cours)</a>
@@ -95,6 +106,28 @@
 
             projectCards.forEach(card => {
                 observer.observe(card);
+            });
+
+            const projectItems = document.querySelectorAll('.projects-list li');
+            projectItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    if (this.classList.contains('active')) {
+                        this.classList.remove('active');
+                    } else {
+                        projectItems.forEach(otherItem => {
+                            otherItem.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.projects-list li')) {
+                    projectItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
             });
         });
     </script>
