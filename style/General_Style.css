@@ -24,7 +24,9 @@ body {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 @media (hover: hover) {
@@ -57,7 +59,8 @@ main section h2 {
   color: #ffffff;
 }
 
-main section p, main section li {
+main section p,
+main section li {
   line-height: 1.7;
 }
 
@@ -66,23 +69,23 @@ main section p {
 }
 
 .lang-flag {
-  height: 1.4em; 
-  width: auto; 
-  vertical-align: middle; 
-  margin-left: 5px; 
-  border: 1px solid rgba(217, 217, 217, 0.6); 
-  border-radius: 3px; 
+  height: 1.4em;
+  width: auto;
+  vertical-align: middle;
+  margin-left: 5px;
+  border: 1px solid rgba(217, 217, 217, 0.6);
+  border-radius: 3px;
 }
 
 .tech-icon {
-  height: 1.3em; 
+  height: 1.3em;
   width: auto;
   vertical-align: middle;
   margin: 0 3px;
   position: relative;
-  top: -1px; 
-  border: 1px solid rgba(217, 217, 217, 0.6); 
-  border-radius: 3px; 
+  top: -1px;
+  border: 1px solid rgba(217, 217, 217, 0.6);
+  border-radius: 3px;
 }
 
 .contact {
@@ -126,7 +129,9 @@ main section p {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 @media (hover: hover) {
@@ -158,7 +163,8 @@ main section p {
   color: #d9d9d9;
 }
 
-.tech-icon, .lang-flag {
+.tech-icon,
+.lang-flag {
   margin: 0;
 }
 
@@ -171,7 +177,9 @@ main section p {
   cursor: pointer;
   font-family: "Playfair Display", serif;
   font-size: 1em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .contact-button:hover {
@@ -240,7 +248,9 @@ main section p {
   cursor: pointer;
   font-family: "Playfair Display", serif;
   font-size: 1em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .accueil-button-container button:hover {
@@ -267,7 +277,10 @@ main section p {
   color: #d9d9d9;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out, padding-bottom 0.5s ease-in-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out,
+    padding-bottom 0.5s ease-in-out;
   overflow: hidden;
 }
 
@@ -281,7 +294,7 @@ main section p {
 }
 
 .projects-list li.active .project-details {
-  max-height: 1000px; 
+  max-height: 1000px;
   opacity: 1;
   margin-top: 20px;
 }
@@ -313,7 +326,9 @@ main section p {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out,
+  transition:
+    max-height 0.8s ease-in-out,
+    opacity 0.8s ease-in-out,
     margin-top 0.8s ease-in-out;
 }
 
@@ -340,7 +355,9 @@ main section p {
   font-family: "Playfair Display", serif;
   font-size: 0.9em;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .project-button:hover {
@@ -353,7 +370,7 @@ main section p {
   border-color: #777;
   color: #aaa;
   cursor: not-allowed;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .download-button-container {
@@ -372,7 +389,9 @@ main section p {
   font-family: "Playfair Display", serif;
   font-size: 1.1em;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .download-button:hover {
@@ -397,7 +416,9 @@ main section p {
   font-size: 1em;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .nav_button button:hover,
@@ -530,11 +551,16 @@ footer p {
   justify-content: center;
   text-align: center;
   text-decoration: none;
-  
+
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.3s ease, color 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s,
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 #scrollToTopBtn.visible {
@@ -544,13 +570,71 @@ footer p {
 }
 
 #scrollToTopBtn:active {
-  transform: scale(0.9); 
+  transform: scale(0.9);
+}
+
+@media (max-width: 1920px) {
+
+
+
+  .nav_button {
+    position: relative;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  #menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 65px;
+  }
+
+  #menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  #menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .nav_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 11rem;
+    background-color: #0d2e20;
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    padding: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #8e8db3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s;
+  }
+
+  .nav_button.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1024px) {
   header {
     flex-direction: column;
-    align-items: center;
+    align-items: auto;
     position: static;
     padding: 10px 0 15px 0;
     padding-bottom: 15px;
@@ -571,7 +655,7 @@ footer p {
     margin-left: 0;
     margin-top: 10px;
   }
-  
+
   #menu-toggle {
     display: block;
     position: absolute;
@@ -607,7 +691,10 @@ footer p {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s;
   }
 
   .nav_button.active {
@@ -621,7 +708,7 @@ footer p {
   }
 
   #scrollToTopBtn {
-    bottom: 70px; 
+    bottom: 70px;
     right: 20px;
   }
 
@@ -648,7 +735,7 @@ footer p {
     box-sizing: border-box;
     margin-bottom: 10px;
   }
-  
+
   .projects-list li {
     padding-left: 15px;
     padding-right: 15px;
@@ -667,39 +754,39 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  #profile-pic-container {
+    perspective: 1000px;
+  }
 
-    #profile-pic-container {
-        perspective: 1000px;
-    }
+  .profile-pic-flipper {
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 
-    .profile-pic-flipper {
-        transform-style: preserve-3d;
-        transition: transform 0.8s;
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
+  #profile-pic-container:hover .profile-pic-flipper {
+    transform: rotateY(180deg);
+  }
 
-    #profile-pic-container:hover .profile-pic-flipper {
-        transform: rotateY(180deg);
-    }
+  #profile-pic-front,
+  #profile-pic-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 
-    #profile-pic-front, #profile-pic-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-
-    #profile-pic-back {
-        transform: rotateY(180deg);
-    }
+  #profile-pic-back {
+    transform: rotateY(180deg);
+  }
 }

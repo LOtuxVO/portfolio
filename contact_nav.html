@@ -18,6 +18,17 @@
         </div>
         <h1>Edgar Pullès</h1>
         <h2>Me Contacter</h2>
+        <nav>
+            <button id="menu-toggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav_button" id="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="projets_nav.html">Projets</a>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -55,10 +66,7 @@
         </section>
     
         <div id="confirmation-message"></div>
-    
-        <div class="accueil-button-container">
-            <button onclick="window.location.href='index.html'">Accueil</button>
-        </div>
+
     </main>
     
     <a href="#" id="scrollToTopBtn" title="Retour en haut">
@@ -70,6 +78,16 @@
     </footer>
 
     <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', function(event) {
+            event.stopPropagation(); 
+
+            navLinks.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
